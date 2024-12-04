@@ -1,0 +1,227 @@
+/* リセットCSS（デフォルトのスタイルをリセット） */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/* 全体のフォント設定 */
+
+body {
+    font-family: Arial, sans-serif;
+    /* フォントを設定 */
+    line-height: 1.6;
+    /* 行間を少し広げる */
+    background-color: rgb(255, 243, 224);
+    /* 背景色 */
+    color: #333;
+    /* 文字色 */
+}
+
+
+/* ヘッダーのスタイル */
+
+header {
+    background-color: rgb(99, 25, 20);
+    /* 背景色 */
+    color: rgb(246, 242, 217);
+    /* 文字色 */
+    padding: 1rem 0;
+    /* 上下のパディング */
+    text-align: center;
+    /* 中央揃え */
+}
+
+header h1 {
+    font-size: 2.5rem;
+    /* タイトルのフォントサイズ */
+}
+
+
+/* ナビゲーションメニューのスタイル */
+
+nav ul {
+    list-style: none;
+    /* リストのデフォルトスタイルを削除 */
+    text-align: center;
+    /* 中央揃え */
+}
+
+nav ul li {
+    display: inline-block;
+    /* 横並びにする */
+    margin: 0 15px;
+    /* 左右のマージン */
+}
+
+nav ul li a {
+    text-decoration: none;
+    /* 下線を消す */
+    color: #fff;
+    /* 文字色 */
+    font-size: 1.2rem;
+    /* フォントサイズ */
+}
+
+nav ul li a:hover {
+    color: #f4f4f4;
+    /* ホバー時の文字色 */
+}
+
+
+/* メインコンテンツのスタイル */
+
+main {
+    padding: 0;
+    /* 上下左右にパディング */
+    max-width: 1200px;
+    /* 最大幅 */
+    margin: 0 auto;
+    /* 横方向の中央揃え */
+}
+
+
+/* セクションごとのスタイル */
+
+section {
+    margin-bottom: 2rem;
+    /* セクションの下にマージン */
+}
+
+section h2 {
+    font-size: 5rem;
+    /* 見出しのフォントサイズ */
+    margin-bottom: 1rem;
+    /* 下にマージン */
+}
+
+table {
+    font-size: 2.5rem;
+}
+
+.line {
+    border-top: 2px solid black;
+}
+
+section p {
+    font-size: 2.5rem;
+    /* 段落のフォントサイズ */
+    line-height: 1.8;
+    /* 行間を広げる */
+}
+
+
+/* フッターのスタイル */
+
+footer {
+    background-color: #333;
+    /* 背景色 */
+    color: #fff;
+    /* 文字色 */
+    text-align: center;
+    /* 中央揃え */
+    padding: 1rem 0;
+    /* 上下にパディング */
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+
+footer p {
+    font-size: 1rem;
+    /* フッターの文字サイズ */
+}
+
+.slider-container {
+    position: fixed;
+    bottom: 60px;
+    width: max-content;
+    overflow: hidden;
+    /* コンテナ外の画像を隠す */
+}
+
+.slider {
+    display: flex;
+    flex-direction: row;
+    width: max-content;
+    animation: slide 120s linear infinite;
+    /* スライドアニメーション */
+}
+
+.scroll-container {
+    position: fixed;
+    right: 50px;
+    bottom: 65px;
+    width: 500px;
+    height: 100vh;
+    overflow: hidden;
+    /* コンテナ外の画像を隠す */
+}
+
+.scroll {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    animation: scroll 120s linear infinite;
+    /* スライドアニメーション */
+}
+
+.slider img {
+    width: 300px;
+    height: 200px;
+    object-fit: cover;
+    margin-right: 10px;
+    /* 画像間のスペース */
+}
+
+.scroll img {
+    width: 500px;
+    height: 900px;
+    object-fit: cover;
+    margin-top: 10px;
+    /* 画像間のスペース */
+}
+
+@keyframes scroll {
+    0% {
+        transform: translateY(0);
+    }
+    100% {
+        transform: translateY(-100%);
+    }
+}
+
+@keyframes slide {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+
+/* レスポンシブデザイン */
+
+@media screen and (max-width: 768px) {
+    header h1 {
+        font-size: 2rem;
+        /* 小さい画面でタイトルのサイズを調整 */
+    }
+    nav ul li {
+        display: block;
+        /* ナビゲーションメニューを縦に並べる */
+        margin: 10px 0;
+        /* 上下にマージン */
+    }
+    main {
+        padding: 1rem;
+        /* パディングを少し縮小 */
+    }
+    section h2 {
+        font-size: 1.5rem;
+        /* 見出しのサイズを小さく */
+    }
+}
